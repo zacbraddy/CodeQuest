@@ -1,6 +1,5 @@
 
 var CodeQuest = React.createClass({
-  displayName: 'Hello',
   getInitialState: function getInitialState() {
     return { name: 'Friend' };
   },
