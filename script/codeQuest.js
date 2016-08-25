@@ -15,7 +15,6 @@ var CodeQuest = React.createClass({
     );
   },
   handleChange: function(e) {
-    console.log(e.target.value);
     this.setState({name: e.target.value});
   }
 });
