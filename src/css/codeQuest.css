@@ -15,7 +15,7 @@
 }
 
 .scroll > div:nth-child(3), .scroll > div:nth-child(4) {
-  padding: 0 0 0px 30px;
+  padding: 0 0 0 30px;
 }
 
 .scroll > div:nth-child(3) {

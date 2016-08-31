@@ -1,0 +1,33 @@
+{
+  "name": "codequest",
+  "version": "0.0.1",
+  "description": "The code files for the first in a series of tutorials for ReactJS. Accompanying reading material can be found at http://thereactionary.net/ ",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zacbraddy/CodeQuest.git"
+  },
+  "author": "Zac Braddy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zacbraddy/CodeQuest/issues"
+  },
+  "homepage": "https://github.com/zacbraddy/CodeQuest#readme",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.24.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  }
+}
