@@ -19,7 +19,7 @@ var config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2016']
+          presets: ['react']
         }
       },
       { test: /\.css$/, loader: "style!css" },
