@@ -15,22 +15,29 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          presets: ['react']
-        }
       },
-      { test: /\.css$/, loader: "style!css" },
-      { test: /\.gif$/, loaders: [
+      {
+        test: /\.css$/,
+        loader: "style!css"
+      },
+      {
+        test: /\.gif$/,
+        loaders: [
         'file?hash=sha512&digest=hex&name=[hash].[ext]',
         'image-webpack',
-      ]},
-      { test: /\.(html)$/,
+        ]
+      },
+      {
+        test: /\.(html)$/,
         loader: "file?name=[path][name].[ext]"
       }
     ],
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  }
 };
 module.exports = config;
