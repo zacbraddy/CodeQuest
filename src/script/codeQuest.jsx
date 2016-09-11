@@ -1,29 +1,40 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+import React, { Component } from 'react';
 
-var CodeQuest = React.createClass({
-  getInitialState: function getInitialState() {
-    return { name: 'Friend' };
-  },
-  render: function() {
+class CodeQuest extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: 'Friend' };
+    this.handleChange = this.handleChange.bind(this);
+
+    this.scrollData = [
+      'I\'d like to invite you on a wondrous adventure towards \r\n the grok of ReactJs. Will you join me?',
+      'Zac Braddy',
+      'The Reactionary',
+    ];
+  }
+
+  render() {
+    const { handleChange, scrollData } = this;
+    const { name } = this.state;
+
     return (
       <div>
-        <input type="text" onChange={this.handleChange} />
+        <input type="text" onChange={handleChange} />
         <div className="scroll">
-          <div>Hello {this.state.name}</div>
-          <div>I'd like to invite you on a wondrous adventure towards {'\r\n'} the grok of ReactJs. Will you join me?</div>
-          <div>Zac Braddy</div>
-          <div>The Reactionary</div>
+          <div>Hello {name}</div>
+          {
+            scrollData.map(textItem => {
+              return (<div>{textItem}</div>);
+            })
+          }
         </div>
       </div>
     );
-  },
-  handleChange: function(e) {
+  }
+
+  handleChange(e) {
     this.setState({name: e.target.value});
   }
-});
+}
 
-ReactDOM.render(
-  <CodeQuest />,
-  document.getElementById('the-kingdom')
-);
+export default CodeQuest;

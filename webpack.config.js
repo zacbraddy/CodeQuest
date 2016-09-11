@@ -2,7 +2,7 @@ var path = require('path');
 
 var config = {
   context: path.resolve(__dirname + '/src'),
-  entry: './index.js',
+  entry: './index.jsx',
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname + '/dist'),

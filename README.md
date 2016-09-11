@@ -1,4 +1,4 @@
-# CodeQuest_Part3
-The code files for the first in a series of tutorials for ReactJS. Accompanying reading material can be found at http://thereactionary.net/embracing-dark-code-magic-jsx-and-why-its-not-all-that-evil/
+# CodeQuest_Part4
+The code files for a series of tutorials for ReactJS. Accompanying reading material can be found at http://thereactionary.net/
 
 Checkout the other branches on this repo to see previous parts of the tutorial.
