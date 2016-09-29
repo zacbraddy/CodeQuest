@@ -1,40 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class CodeQuest extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { name: 'Friend' };
-    this.handleChange = this.handleChange.bind(this);
+const CodeQuest = (props) => {
+  const { Their_Name, Message_Body, Your_Name } = props;
 
-    this.scrollData = [
-      'I\'d like to invite you on a wondrous adventure towards \r\n the grok of ReactJs. Will you join me?',
-      'Zac Braddy',
-      'The Reactionary',
-    ];
-  }
-
-  render() {
-    const { handleChange, scrollData } = this;
-    const { name } = this.state;
-
-    return (
-      <div>
-        <input type="text" onChange={handleChange} />
-        <div className="scroll">
-          <div>Hello {name}</div>
-          {
-            scrollData.map(textItem => {
-              return (<div>{textItem}</div>);
-            })
-          }
+  let id = -1;
+  return (
+    <div>
+      <div className="scroll">
+        <div className="greeting">Hello {Their_Name}</div>
+        {
+          Message_Body.map(textItem => {
+            id++;
+            return (<div key={id} className="message-body">{textItem}</div>);
+          })
+        }
+        <div className="closing">
+          <div>{Your_Name}</div>
+          <div>The Reactionary</div>
         </div>
       </div>
-    );
-  }
-
-  handleChange(e) {
-    this.setState({name: e.target.value});
-  }
-}
+    </div>
+  );
+};
 
 export default CodeQuest;

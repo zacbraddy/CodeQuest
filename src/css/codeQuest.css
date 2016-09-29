@@ -1,23 +1,19 @@
 .scroll {
-  background-image: url('../assets/scroll.gif');
   width: 250px;
-  height: 353px;
-  background-repeat: no-repeat;
-  margin-top: 40px;
+  min-height: 325px;
+  background-image: url('../assets/scroll.gif');
+  background-repeat: repeat-y;
 }
 
-.scroll > div {
-  padding-left: 40px;
+.scroll .message-body {
+  padding: 0 20px 0 40px;
+  word-wrap: break-word;
 }
 
-.scroll > div:nth-child(1) {
+.scroll .greeting {
   padding: 70px 0 20px 30px;
 }
 
-.scroll > div:nth-child(3), .scroll > div:nth-child(4) {
-  padding: 0 0 0 30px;
-}
-
-.scroll > div:nth-child(3) {
-  padding-top: 20px;
+.scroll .closing {
+  padding: 20px 0 0 30px;
 }

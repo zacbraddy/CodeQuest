@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import CodeQuest from './script/codeQuest';
-import ScrollCreatorForm from './script/ScrollCreatorForm';
+import ScrollCreator from './script/ScrollCreator';
 
 /* Vendor */
 require('jquery');
@@ -21,6 +20,6 @@ const fields = {
 };
 
 ReactDOM.render(
-  <ScrollCreatorForm fields={fields} />,
+  <ScrollCreator fields={fields} />,
   document.getElementById('the-kingdom')
 );
