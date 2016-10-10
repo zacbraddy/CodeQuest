@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import CodeQuest from './CodeQuest';
 
 const ScrollPrintPreview = (props) => {
-  const {formData} = props;
+  const { formData } = props;
   return (
     <div>
       <strong>Print Preview</strong>
@@ -11,6 +11,10 @@ const ScrollPrintPreview = (props) => {
       />
     </div>
   );
+};
+
+ScrollPrintPreview.propTypes = {
+  formData: PropTypes.object.isRequired,
 };
 
 export default ScrollPrintPreview;

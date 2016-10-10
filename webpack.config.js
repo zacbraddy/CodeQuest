@@ -1,14 +1,14 @@
-var path = require('path');
+const path = require('path');
 
-var config = {
-  context: path.resolve(__dirname + '/src'),
+const config = {
+  context: path.resolve(path.join(__dirname, '/src')),
   entry: './index.jsx',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname + '/dist'),
+    path: path.resolve(path.join(__dirname, '/dist')),
   },
   devServer: {
-    contentBase: path.join(__dirname + '/dist'),
+    contentBase: path.join(__dirname, '/dist'),
     port: 3000,
     open: true,
   },
@@ -17,18 +17,18 @@ var config = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loaders: ['babel-loader', 'eslint-loader'],
       },
       {
         test: /\.css$/,
-        loader: "style!css"
+        loader: 'style!css',
       },
       {
         test: /\.gif$/,
         loaders: [
-        'file?hash=sha512&digest=hex&name=[hash].[ext]',
-        'image-webpack',
-        ]
+          'file?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack',
+        ],
       },
       {
         test: /\.(html)$/,
@@ -36,12 +36,12 @@ var config = {
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url-loader?limit=10000&mimetype=application/font-woff",
+        loader: 'url-loader?limit=10000&mimetype=application/font-woff',
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "file-loader",
-      }
+        loader: 'file-loader',
+      },
     ],
   },
   resolve: {
@@ -49,7 +49,7 @@ var config = {
     alias: {
       jquery: path.join(__dirname, '/node_modules/jquery/src/jquery'),
       'bootstrap-css': path.join(__dirname, '/node_modules/bootstrap/dist/css/bootstrap.css'),
-    }
-  }
+    },
+  },
 };
 module.exports = config;

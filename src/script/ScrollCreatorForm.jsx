@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ScrollPrintPreview from './ScrollPrintPreview';
 import TextInput from './TextInput';
 import MultiTextInput from './MultiTextInput';
 
-const ScrollCreatorForm = (props) =>
-{
+const ScrollCreatorForm = (props) => {
   const { formData, onChangeSingle, onChangeMulti, addOnClickMulti, removeOnClickMulti } = props;
 
   let id = -1;
@@ -12,9 +11,9 @@ const ScrollCreatorForm = (props) =>
     <div>
       <div className="scrollCreatorPanel">
         {
-          Object.keys(formData).map(fieldName => {
+          Object.keys(formData).map((fieldName) => {
             id++;
-            if (typeof(formData[fieldName]) === 'string')
+            if (typeof (formData[fieldName]) === 'string') {
               return (
                 <TextInput
                   id={id}
@@ -24,20 +23,22 @@ const ScrollCreatorForm = (props) =>
                   onChange={onChangeSingle}
                 />
               );
-            else
-              return (
-                <MultiTextInput
-                  id={id}
-                  key={id}
-                  fieldName={fieldName}
-                  fieldValue={formData[fieldName]}
-                  onChange={onChangeMulti}
-                  addOnClick={addOnClickMulti}
-                  removeOnClick={removeOnClickMulti}
-                />
-              );
-          })
-        }
+            }
+
+            return (
+              <MultiTextInput
+                id={id}
+                key={id}
+                fieldName={fieldName}
+                fieldValue={formData[fieldName]}
+                onChange={onChangeMulti}
+                addOnClick={addOnClickMulti}
+                removeOnClick={removeOnClickMulti}
+              />
+            );
+          }
+        )
+      }
       </div>
       <div className="scrollCreatorPanel">
         <ScrollPrintPreview
@@ -46,6 +47,14 @@ const ScrollCreatorForm = (props) =>
       </div>
     </div>
   );
+};
+
+ScrollCreatorForm.propTypes = {
+  formData: PropTypes.object.isRequired,
+  onChangeSingle: PropTypes.func.isRequired,
+  onChangeMulti: PropTypes.func.isRequired,
+  addOnClickMulti: PropTypes.func.isRequired,
+  removeOnClickMulti: PropTypes.func.isRequired,
 };
 
 export default ScrollCreatorForm;

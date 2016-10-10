@@ -1,3 +1,4 @@
+/* globals document */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ScrollCreator from './script/ScrollCreator';
@@ -5,7 +6,7 @@ import ScrollCreator from './script/ScrollCreator';
 /* Vendor */
 require('jquery');
 require('bootstrap');
-require('bootstrap-css');
+require('bootstrap-css'); // eslint-disable-line
 
 /* Static Files */
 require('./css/codeQuest.css');
