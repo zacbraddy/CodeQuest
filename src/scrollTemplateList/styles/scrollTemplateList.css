@@ -1,0 +1,45 @@
+.scroll-template-list-resting {
+  margin: 10%;
+  border: 1px solid #ddd;
+  opacity: 1;
+  background-color: #fdfdfd;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.grid-cell {
+  flex-grow: 1;
+}
+
+.grid-header {
+  margin: 10px 20px;
+  font-weight: 700;
+}
+
+.end-of-row-header-spacer {
+  width: 40px;
+}
+
+.btn.btn-success.scroll-template-list-add-button {
+  padding: 6px 42%;
+  margin: 5px 20px;
+}
+
+.scroll-template-list-appear {
+  margin: 5% 10%;
+  height: 0;
+  opacity: 0;
+}
+
+.scroll-template-list-appear.scroll-template-list-appear-active {
+  margin: 10%;
+  opacity: 1;
+  height: auto;
+  transition: margin 0.5s linear, height 0.5s linear, opacity 1s ease-in;
+}
