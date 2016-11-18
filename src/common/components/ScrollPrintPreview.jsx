@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import CodeQuest from './CodeQuest';
+import CodeQuest from '../../codeQuest/components/CodeQuest';
 
 const ScrollPrintPreview = (props) => {
   const { formData } = props;

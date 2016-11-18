@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
-import ScrollPrintPreview from './ScrollPrintPreview';
-import TextInput from './TextInput';
-import MultiTextInput from './MultiTextInput';
+import ScrollPrintPreview from '../../common/components/ScrollPrintPreview';
+import TextInput from '../../common/components/TextInput';
+import MultiTextInput from '../../multiTextInput/components/MultiTextInput';
 
 const ScrollCreatorForm = (props) => {
   const { formData, onChangeSingle, onChangeMulti, addOnClickMulti, removeOnClickMulti } = props;

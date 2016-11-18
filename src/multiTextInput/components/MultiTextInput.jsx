@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+require('../styles/multiTextInput.css');
+
 const MultiTextInput = (props) => {
   const { id, fieldName, fieldValue, onChange, addOnClick, removeOnClick } = props;
   let subId = -1;

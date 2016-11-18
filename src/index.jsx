@@ -1,7 +1,7 @@
 /* globals document */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ScrollCreator from './script/ScrollCreator';
+import ScrollCreator from './common/containers/ScrollCreator';
 
 /* Vendor */
 require('jquery');
@@ -9,8 +9,8 @@ require('bootstrap');
 require('bootstrap-css'); // eslint-disable-line
 
 /* Static Files */
-require('./css/codeQuest.css');
-require('./css/scrollCreatorForm.css');
+require('./codeQuest/styles/codeQuest.css');
+require('./scrollCreator/styles/scrollCreatorForm.css');
 require('./index.html');
 
 /* To be refactored into a store in future tutorials */
