@@ -1,7 +1,7 @@
 /* globals document */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ScrollTemplateList from './scrollTemplateList/containters/ScrollTemplateList';
+import ScrollTemplateList from './scrollTemplateList/containers/ScrollTemplateList';
 
 /* Vendor */
 require('jquery');
