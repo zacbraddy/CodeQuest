@@ -13,6 +13,7 @@ const ScrollTemplateListItem = (props) => {
     changeSingleValue,
     changeMultiValue,
     formData,
+    rowDisplayingAdvancedDetail,
   } = props;
 
   return (
@@ -41,7 +42,7 @@ const ScrollTemplateListItem = (props) => {
         </button>
       </div>
       {
-        (index === props.rowDisplayingAdvancedDetail)
+        (index === rowDisplayingAdvancedDetail)
           ?
           (<div className="scroll-template-list-item-advanced-detail">
             <ScrollCreatorForm
