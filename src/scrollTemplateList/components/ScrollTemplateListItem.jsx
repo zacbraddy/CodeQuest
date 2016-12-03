@@ -16,7 +16,7 @@ const ScrollTemplateListItem = (props) => {
   } = props;
 
   return (
-    <div className="scroll-template-list-item" key={index}>
+    <div className="scroll-template-list-item">
       <div className="scroll-template-list-item-simple-detail">
         <button
           onClick={() => {
