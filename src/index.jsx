@@ -1,7 +1,7 @@
 /* globals document */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ScrollCreator from './common/containers/ScrollCreator';
+import ScrollTemplateList from './scrollTemplateList/containters/ScrollTemplateList';
 
 /* Vendor */
 require('jquery');
@@ -10,7 +10,6 @@ require('bootstrap-css'); // eslint-disable-line
 
 /* Static Files */
 require('./codeQuest/styles/codeQuest.css');
-require('./scrollCreator/styles/scrollCreatorForm.css');
 require('./index.html');
 
 /* To be refactored into a store in future tutorials */
@@ -21,6 +20,6 @@ const fields = {
 };
 
 ReactDOM.render(
-  <ScrollCreator fields={fields} />,
+  <ScrollTemplateList fields={fields} />,
   document.getElementById('the-kingdom')
 );

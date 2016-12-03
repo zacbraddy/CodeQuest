@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react';
-import ScrollCreatorForm from '../../scrollCreator/components/ScrollCreatorForm';
+import ScrollCreatorForm from '../../scrollCreatorForm/components/ScrollCreatorForm';
 
 class ScrollCreator extends Component {
   constructor(props) {

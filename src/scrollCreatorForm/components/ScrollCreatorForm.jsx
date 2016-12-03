@@ -1,7 +1,8 @@
 import React, { PropTypes } from 'react';
-import ScrollPrintPreview from '../../common/components/ScrollPrintPreview';
 import TextInput from '../../common/components/TextInput';
 import MultiTextInput from '../../multiTextInput/components/MultiTextInput';
+
+require('../styles/scrollCreatorForm.css');
 
 const ScrollCreatorForm = (props) => {
   const { formData, onChangeSingle, onChangeMulti, addOnClickMulti, removeOnClickMulti } = props;
@@ -39,11 +40,6 @@ const ScrollCreatorForm = (props) => {
           }
         )
       }
-      </div>
-      <div className="scrollCreatorPanel">
-        <ScrollPrintPreview
-          formData={formData}
-        />
       </div>
     </div>
   );

@@ -1,0 +1,32 @@
+.scroll-template-list-resting {
+  margin: 10%;
+  border: 0.0625em solid #ddd;
+  opacity: 1;
+  background-color: #fdfdfd;
+  border-radius: 0.3125em;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25em;
+}
+
+.grid-row {
+  display: flex;
+}
+
+.grid-cell {
+  flex-grow: 1;
+}
+
+.grid-header {
+  margin: 0.625em 1.25em;
+  font-weight: 700;
+}
+
+.end-of-row-header-spacer {
+  width: 2.5em;
+}
+
+.btn.btn-success.scroll-template-list-add-button {
+  padding: 0.375em 42%;
+  margin: 0.3125em 1.25em;
+}

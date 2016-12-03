@@ -1,0 +1,81 @@
+.scroll-template-list-item {
+  margin: 0.3125em 1.25em;
+  border: 0.0625em solid #ddd;
+  background-color: #fafafa;
+  border-radius: 0.125em;
+  padding: 0.3125em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll-template-list-item-simple-detail {
+  display: flex;
+}
+
+.scroll-template-list-item-simple-detail button:nth-child(1)
+{
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+}
+
+.scroll-template-list-item-simple-detail button:nth-child(1),
+.scroll-template-list-item-simple-detail button:active,
+.scroll-template-list-item-simple-detail button:focus
+{
+  outline: none;
+}
+
+.scroll-template-list-item-advanced-detail {
+  margin: 0.625em;
+  padding: 0.3125em;
+  z-index: 200;
+}
+
+.scroll-template-list-item-content {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.scroll-template-list-item-content .grid-cell
+{
+  flex-basis: 50%;
+}
+
+.scroll-template-list-item-delete-button {
+  z-index: 100;
+}
+
+.scroll-template-list-item .scroll-template-list-item-overlay-resting {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 100%;
+  left: 0;
+  width: 25%;
+  margin-left: 32.5%;
+  height: 100%;
+  background-color: transparent;
+  opacity: 0.1;
+  transition: background-color 0.5s ease-in-out, width 0.5s ease-in-out, margin-left 0.5s ease-in-out;
+}
+
+.scroll-template-list-item:hover .scroll-template-list-item-overlay-resting {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-color: #aaa;
+  margin-left: 0;
+  transition: background-color 0.1s ease-in-out, width 0.5s ease-in-out, margin-left 0.5s ease-in-out;
+}
+
+.scroll-template-list-add-button-text {
+  text-align: center;
+  flex-grow: 1;
+}
