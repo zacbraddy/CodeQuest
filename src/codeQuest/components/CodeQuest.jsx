@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 
+require('./codeQuest/styles/codeQuest.css');
+
 const CodeQuest = (props) => {
   const { Their_Name, Message_Body, Your_Name } = props;
 

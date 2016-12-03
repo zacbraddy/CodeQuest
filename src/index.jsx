@@ -9,7 +9,6 @@ require('bootstrap');
 require('bootstrap-css'); // eslint-disable-line
 
 /* Static Files */
-require('./codeQuest/styles/codeQuest.css');
 require('./index.html');
 
 /* To be refactored into a store in future tutorials */
