@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 require('../styles/multiTextInput.css');
 
@@ -19,31 +20,39 @@ const MultiTextInput = (props) => {
         <i className="glyphicon glyphicon-plus" />
       </button>
       <div id={`${fieldName}${id}`}>
-        {
-          fieldValue.map((val) => {
-            subId++;
-            return (
-              <div className="input-group multi-field-input" key={`${fieldName}${id}-${subId}`}>
-                <input
-                  id={`${fieldName}_${subId}`}
-                  type="text"
-                  className="form-control"
-                  placeholder={`${humanReadableFieldName}`}
-                  value={val}
-                  onChange={onChange}
-                />
-                <span className="input-group-btn">
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => removeOnClick(fieldName, subId)}
-                  >
-                    <i className="glyphicon glyphicon-remove" />
-                  </button>
-                </span>
-              </div>
-            );
-          })
-        }
+        <ReactCSSTransitionGroup
+          transitionName="multi-text-input-items"
+          transitionEnterTimeout={500}
+          transitionEnter
+          transitionLeaveTimeout={500}
+          transitionLeave
+        >
+          {
+            fieldValue.map((val) => {
+              subId++;
+              return (
+                <div className="input-group multi-field-input" key={`${fieldName}${id}-${subId}`}>
+                  <input
+                    id={`${fieldName}_${subId}`}
+                    type="text"
+                    className="form-control"
+                    placeholder={`${humanReadableFieldName}`}
+                    value={val}
+                    onChange={onChange}
+                  />
+                  <span className="input-group-btn">
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => removeOnClick(fieldName, subId)}
+                    >
+                      <i className="glyphicon glyphicon-remove" />
+                    </button>
+                  </span>
+                </div>
+              );
+            })
+          }
+        </ReactCSSTransitionGroup>
       </div>
     </div>
   );

@@ -30,3 +30,16 @@
   padding: 0.375em 42%;
   margin: 0.3125em 1.25em;
 }
+
+.scroll-template-list-appear {
+  margin: 5% 10%;
+  height: 0;
+  opacity: 0;
+}
+
+.scroll-template-list-appear.scroll-template-list-appear-active {
+  margin: 10%;
+  opacity: 1;
+  height: auto;
+  transition: margin 0.5s linear, height 0.5s linear, opacity 1s ease-in;
+}

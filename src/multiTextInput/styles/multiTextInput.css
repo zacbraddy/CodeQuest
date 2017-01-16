@@ -7,3 +7,25 @@
   margin-right: 1em;
   display: inline-block;
 }
+
+.multi-text-input-items-enter {
+  opacity: 0;
+  height: 0;
+}
+
+.multi-text-input-items-enter.multi-text-input-items-enter-active {
+  opacity: 1;
+  height: auto;
+  transition: opacity 0.5s ease-in, height 0.1s linear;
+}
+
+.multi-text-input-items-leave {
+  opacity: 1;
+  height: auto;
+}
+
+.multi-text-input-items-leave.multi-text-input-items-leave-active {
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.3s linear, height 0.3s ease-out;
+}

@@ -79,3 +79,33 @@
   text-align: center;
   flex-grow: 1;
 }
+
+.scroll-template-list-items-enter {
+  opacity: 0;
+  height: 0;
+  margin: 0 20px;
+  padding: 0 5px;
+}
+
+.scroll-template-list-items-enter.scroll-template-list-items-enter-active {
+  opacity: 1;
+  margin: 5px 20px;
+  height: auto;
+  padding: 5px;
+  transition: opacity 0.5s ease-in, height 0.1s linear, margin 0.1s linear, padding 0.1s linear;
+}
+
+.scroll-template-list-items-leave {
+  opacity: 1;
+  margin: 5px 20px;
+  height: auto;
+  padding: 5px;
+}
+
+.scroll-template-list-items-leave.scroll-template-list-items-leave-active {
+  opacity: 0;
+  height: 0;
+  margin: 0 20px;
+  padding: 0 5px;
+  transition: opacity 0.3s linear, height 0.3s ease-out, margin 0.3s ease-out, padding 0.3s ease-out;
+}

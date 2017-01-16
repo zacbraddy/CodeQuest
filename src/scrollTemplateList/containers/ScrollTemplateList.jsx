@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ScrollTemplateListItem from '../components/ScrollTemplateListItem';
 
 require('../styles/scrollTemplateList.css');
@@ -99,37 +100,53 @@ class ScrollTemplateList extends Component {
 
   render() {
     return (
-      <div className="scroll-template-list-resting">
-        <div className="grid-header grid-row">
-          <div className="grid-cell">Their Name</div>
-          <div className="grid-cell">Your Name</div>
-          <div className="end-of-row-header-spacer" />
+      <ReactCSSTransitionGroup
+        transitionName="scroll-template-list"
+        transitionAppear
+        transitionAppearTimeout={500}
+        transitionEnter={false}
+        transitionLeave={false}
+      >
+        <div className="scroll-template-list-resting">
+          <div className="grid-header grid-row">
+            <div className="grid-cell">Their Name</div>
+            <div className="grid-cell">Your Name</div>
+            <div className="end-of-row-header-spacer" />
+          </div>
+          <ReactCSSTransitionGroup
+            transitionName="scroll-template-list-items"
+            transitionEnterTimeout={500}
+            transitionEnter
+            transitionLeaveTimeout={500}
+            transitionLeave
+          >
+            {
+              this.state.data.map((d, idx) =>
+                (
+                  <ScrollTemplateListItem
+                    key={idx}
+                    formData={d}
+                    index={idx}
+                    rowDisplayingAdvancedDetail={this.state.rowDisplayingAdvancedDetail}
+                    handleToggleDetailClick={this.handleToggleDetailClick}
+                    removeItem={this.handleRemoveClick}
+                    createNewItemForMessageBody={this.createNewEntryForMulti}
+                    changeSingleValue={this.changeSingleValue}
+                    changeMultiValue={this.changeMultiValue}
+                    removeItemFromMessageBody={this.removeEntryForMulti}
+                  />
+                )
+              )
+            }
+          </ReactCSSTransitionGroup>
+          <button
+            className="scroll-template-list-add-button scroll-template-list-item
+                        glyphicon
+                        glyphicon-plus btn btn-success"
+            onClick={this.handleAddClick}
+          />
         </div>
-        {
-          this.state.data.map((d, idx) =>
-            (
-              <ScrollTemplateListItem
-                key={idx}
-                formData={d}
-                index={idx}
-                rowDisplayingAdvancedDetail={this.state.rowDisplayingAdvancedDetail}
-                handleToggleDetailClick={this.handleToggleDetailClick}
-                removeItem={this.handleRemoveClick}
-                createNewItemForMessageBody={this.createNewEntryForMulti}
-                changeSingleValue={this.changeSingleValue}
-                changeMultiValue={this.changeMultiValue}
-                removeItemFromMessageBody={this.removeEntryForMulti}
-              />
-            )
-          )
-        }
-        <button
-          className="scroll-template-list-add-button scroll-template-list-item
-                      glyphicon
-                      glyphicon-plus btn btn-success"
-          onClick={this.handleAddClick}
-        />
-      </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }
